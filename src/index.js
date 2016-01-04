@@ -102,10 +102,9 @@ VirtualScroll.prototype._onTouchStart = function(e) {
 
 VirtualScroll.prototype._onTouchMove = function(e) {
     var options = this.options;
-    if(options.preventTouch
-        && !e.target.classList.contains(options.unpreventTouchClass)) {
-        e.preventDefault();
-    }
+    var classes = e.target.getAttribute('class');
+
+    if (options.preventTouch && (classes === null || classes.split(/\s+/).indexOf(options.unpreventTouchClass) === -1)) e.preventDefault();
 
     var evt = this._event;
 
