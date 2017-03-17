@@ -18,7 +18,7 @@ var keyCodes = {
 };
 
 function VirtualScroll(options) {
-    bindAll(this, '_onWheel', '_onMouseWheel', '_onTouchStart', '_onTouchMove', '_onKeyDown', '_onKeyUp');
+    bindAll(this, '_onWheel', '_onMouseWheel', '_onTouchStart', '_onTouchMove', '_onKeyDown');
 
     this.el = window;
     if (options && options.el) {
